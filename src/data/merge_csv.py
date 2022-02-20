@@ -5,7 +5,7 @@ def merge_csv(filename1,filename2,mergedfilepath):
     df1=pd.read_csv(filename1)
     df2=pd.read_csv(filename2)
     df = pd.concat([df1,df2], ignore_index=True)
-    df.to_csv(mergedfilepath, index=False)  # output will remove later before next iter
+    df.to_csv(mergedfilepath, index=False)
 
 def compute_missing_values(df):
     missing_data={}
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     mergefilename = os.path.join(os.getcwd(), "../../data/processed/scan_wifi.csv")
     merge_csv(filename1,filename2,mergefilename)
 
-    #compute missing and outlier values
+    #valeurs abberantes et manquantes
     df=pd.read_csv(mergefilename)
     compute_missing_values(df)
     compute_outliers(df)

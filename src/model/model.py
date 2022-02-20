@@ -3,14 +3,14 @@ import pandas as pd
 def ComputeMean(df):
     df_rssi = df['RSSI']
     mean = df_rssi.mean()
-    print("Mean value :", mean)
+    print("valeur moyenne :", mean)
     return mean
 
 
 def ComputeMedian(df):
     df_rssi = df['RSSI']
     median = df_rssi.median()
-    print("Median value :", median)
+    print("valeur medianne :", median)
     return median
 
 

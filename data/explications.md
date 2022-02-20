@@ -19,5 +19,6 @@ L'adresse MAC virtuelle est codée directement dans une chaîne de bits (b' '), 
 ## Répertoire processed
 Ce répertoire contient des ensembles de données transformées intermédiaires.
 
-## Répertoire cleaned
-Ce répertoire contient l'ensembles de données exactes et finales. 
+## Répertoire others
+Ce dossier contient des fichiers qui nous ont été utiles à la réalisation de la SAE, qui ne nous servent plus mais que nous voulons gardr en cas de problèmes
+

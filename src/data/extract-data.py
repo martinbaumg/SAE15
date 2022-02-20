@@ -22,7 +22,7 @@ def ExtractIdExp (fileName) :
     return IdExp
 
 def ExtractSsid (content) :
-    ssid=content.split("'")[0]
+    ssid=content.split("'")[0][:-1]
     return ssid
 
 def ExtractMacAddr (content) :
@@ -46,7 +46,7 @@ def ExtractInfo(path):
         date=ExtractDate(folderName)
         IdExp=ExtractDate(fileName)
         place=ExtractPlace(folderName)
-        result+=','.join([place,date,IdExp,ssid,Addr,rssi+'\n'])
+        result+=','.join([place,date,IdExp,ssid,Addr,rssi])
     descRd.close()
     return(result)
 
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     if os.path.isfile(args.input):
         result = ExtractInfo(args.input)
         descWr = open("../../data/processed/wifi.csv","w")
-        descWr.write("Location,Date,ExpId,SSID,Addr,RSSI\n")
+        descWr.write("Location,Date,SSID,Addr,RSSI\n")
         descWr.write(result)
         descWr.close()
     elif os.path.isdir(args.input):
@@ -75,7 +75,7 @@ if __name__ == '__main__':
         for fichier in listFiles:
             if isFileCreated == False:
                 descWr = open("../../data/processed/wifi.csv","w")
-                descWr.write("Building,Date,ExpId,SSID,Addr,RSSI\n")
+                descWr.write("Building,Date,SSID,Addr,RSSI\n")
                 descWr.close()
                 isFileCreated = True
 
